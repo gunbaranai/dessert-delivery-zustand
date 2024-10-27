@@ -12,6 +12,7 @@ interface State {
 interface Actions {
 	addToCart: (Item: Product) => void
 	removeFromCart: (Item: Product) => void
+	removeAllFromCart: () => void
 }
 
 const INITIAL_STATE: State = {
@@ -56,6 +57,13 @@ export const useCartStore = create(
 					totalPrice: state.totalPrice - product.price,
 				}))
 			},
+			removeAllFromCart: () => {
+				set(state => ({
+					cart: INITIAL_STATE.cart,
+					totalItems: INITIAL_STATE.totalItems,
+					totalPrice: INITIAL_STATE.totalPrice,
+				}))
+			}
 		}),
 		{
 			name: "cart-storage",

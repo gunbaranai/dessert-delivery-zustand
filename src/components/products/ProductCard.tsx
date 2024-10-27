@@ -27,7 +27,7 @@ export default function ProductCard({ product }: Props) {
 					<span className='text-gray-800 font-semibold'>${product.price.toFixed(2)}</span>
 					<button
 						type='button'
-						className='ml-2 bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600'
+						className='ml-2 bg-pink-600 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600'
 						onClick={() => addToCart(product)}
 					>
 						Add to Cart

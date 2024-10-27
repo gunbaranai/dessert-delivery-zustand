@@ -12,9 +12,9 @@ export default function Header({ onCartIconClick }: Props) {
 	const cart = useFromStore(useCartStore, state => state.cart)
 
 	return (
-		<header className='bg-gray-900 text-white py-4 flex items-center justify-between h-14 sticky top-0 z-10'>
+		<header className='bg-pink-600 text-white py-4 flex items-center justify-between h-14 sticky top-0 z-10'>
 			<nav className='container mx-auto md:w-10/12 px-4 flex justify-between'>
-				<span className='text-lg font-semibold'>My E-commerce</span>
+				<span className='text-lg font-semibold'>Dessert Delivery</span>
 				<div className='relative'>
 					<button
 						type='button'

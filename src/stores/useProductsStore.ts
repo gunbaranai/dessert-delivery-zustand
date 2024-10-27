@@ -1,6 +1,7 @@
 import { create } from "zustand"
 
 import { Product } from "../types"
+import { products } from "@/data/db-dummy"
 
 interface State {
 	products: Product[]
@@ -27,7 +28,7 @@ export const useProductsStore = create<State & Actions>(set => ({
 			set({ isLoading: true, error: null })
 			const response = await fetch("https://dummyjson.com/products")
 			const data = await response.json()
-			set({ products: data.products, isLoading: false })
+			set({ products: products, isLoading: false })
 		} catch (error) {
 			set({ error, isLoading: false })
 		}

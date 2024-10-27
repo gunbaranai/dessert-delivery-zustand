@@ -6,6 +6,12 @@ import useFromStore from "../../hooks/useFromStore"
 
 function Cart() {
 	const cart = useFromStore(useCartStore, state => state.cart)
+	const removeAllFromCart = useCartStore(state => state.removeAllFromCart)
+
+	const checkout = (arr: any) => {
+		alert("Checkout for a total of $" + total + " success!")
+		removeAllFromCart()
+	}
 
 	let total = 0
 	if (cart) {
@@ -23,6 +29,13 @@ function Cart() {
 			<div className='flex justify-between items-center mt-4'>
 				<span className='text-lg font-bold'>Total:</span>
 				<span className='text-xl font-bold'>${total.toFixed(2)}</span>
+				<button
+					type='button'
+					className='ml-2 bg-pink-600 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600'
+					onClick={() => checkout(cart)}
+				>
+					Checkout
+				</button>
 			</div>
 		</section>
 	)
